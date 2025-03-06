@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aircall Anywhere SDK Test</title>
+  <style>
+    #phone { width: 350px; height: 600px; border: 1px solid #ccc; }
+    button { margin: 10px; padding: 5px 10px; }
+  </style>
+</head>
+<body>
+  <h1>Aircall Anywhere SDK Test</h1>
+  <div id="phone"></div>
+  <button onclick="loadPhone()">Load Aircall Phone</button>
+  <script>
+    console.log('Loading Aircall SDK...');
+    document.write('<script src="https://unpkg.com/aircall-everywhere@latest/dist/index.js"><\/script>');
+    document.write('<script src="https://cdn.jsdelivr.net/npm/aircall-everywhere@latest/dist/index.js"><\/script>');
+  </script>
+  <script>
+    function loadPhone() {
+      new AircallPhone({
+        domToLoadPhone: '#phone',
+        onLogin: () => {
+          console.log('Phone loaded!');
+          alert('Aircall Phone is ready!');
+        },
+        onLogout: () => console.log('Logged out'),
+        size: 'big'
+      });
+    }
+  </script>
+</body>
+</html>
