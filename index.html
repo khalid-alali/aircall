@@ -12,10 +12,11 @@
   <h1>Aircall Anywhere SDK Test</h1>
   <div id="phone"></div>
   <button onclick="loadPhone()">Load Aircall Phone</button>
-  <script src="./aircall-everywhere.js"></script>
-  <script>
+  <script type="module">
+    import AircallPhone from './aircall-everywhere.js';
+
     console.log('Loading Aircall SDK...');
-    function loadPhone() {
+    window.loadPhone = function() {
       new AircallPhone({
         domToLoadPhone: '#phone',
         onLogin: () => {
@@ -25,7 +26,7 @@
         onLogout: () => console.log('Logged out'),
         size: 'big'
       });
-    }
+    };
   </script>
 </body>
 </html>
