@@ -12,12 +12,9 @@
   <h1>Aircall Anywhere SDK Test</h1>
   <div id="phone"></div>
   <button onclick="loadPhone()">Load Aircall Phone</button>
+  <script src="./aircall-everywhere.js"></script>
   <script>
     console.log('Loading Aircall SDK...');
-    document.write('<script src="https://unpkg.com/aircall-everywhere@latest/dist/index.js"><\/script>');
-    document.write('<script src="https://cdn.jsdelivr.net/npm/aircall-everywhere@latest/dist/index.js"><\/script>');
-  </script>
-  <script>
     function loadPhone() {
       new AircallPhone({
         domToLoadPhone: '#phone',
